@@ -8,10 +8,13 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      fontFamily: {
+        title: ["Montserrat", "serif"],
+        family: ["Roboto Serif", "serif"],
       },
+      screens: {
+        xs:"430px", //custom screen
+      }
     },
   },
   plugins: [],
