@@ -46,7 +46,7 @@ const Index: React.FC = () => {
         setJobs(data);
         setFilteredJobs(data);
       } catch (error) {
-        console.error("Failed to get API data");
+        console.error(`Failed to get API data ${error}`);
       } finally {
         setLoading(false); 
       }

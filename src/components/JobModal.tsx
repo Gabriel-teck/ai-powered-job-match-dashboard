@@ -27,7 +27,6 @@ interface JobModalProps {
 
 export const JobModal: React.FC<JobModalProps> = ({
   job,
-  isModalOpen,
   setIsModalOpen,
   applyButton,
 }) => {

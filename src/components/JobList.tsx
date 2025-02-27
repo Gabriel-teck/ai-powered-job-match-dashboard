@@ -30,7 +30,6 @@ interface JobCardProps {
 
 export const JobList: React.FC<JobCardProps> = ({
   job,
-  userSkills,
   showProgressBar,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
