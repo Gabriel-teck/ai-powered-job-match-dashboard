@@ -20,6 +20,7 @@ interface Job {
   type: string;
   thumbnail: string;
   active:string;
+  rating:string;
 }
 
 const Index: React.FC = () => {
