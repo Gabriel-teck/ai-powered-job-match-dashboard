@@ -1,7 +1,7 @@
 import React from "react";
 import { HiDotsHorizontal } from "react-icons/hi";
 import { FaRegBookmark } from "react-icons/fa";
-import { IoClose } from "react-icons/io5";
+import { IoCloseSharp } from "react-icons/io5";
 import Image from "next/image";
 
 interface Job {
@@ -48,7 +48,7 @@ export const JobModal: React.FC<JobModalProps> = ({
             onClick={() => setIsModalOpen(false)}
             className="font-bold text-4xl border rounded-r-lg px-4 py-2 border-white hover:text-red-600 hover:font-bold"
           >
-            <IoClose />
+            <IoCloseSharp />
           </button>
         </div>
         <div className=" rounded-lg w-full h-[100%] shadow-sm ">

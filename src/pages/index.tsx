@@ -5,7 +5,8 @@ import { FaSearch } from "react-icons/fa";
 import { useFilter } from "@/components/FilterContext";
 import { useUser } from "@/components/UserContext";
 import { JobList } from "@/components/JobList";
-import { IoClose } from "react-icons/io5";
+import { IoCloseSharp } from "react-icons/io5";
+
 
 interface Job {
   id: number;
@@ -69,13 +70,13 @@ const Index: React.FC = () => {
     }, 1000);
   };
 
-  const clearSearchTitle = () => {
-    setSearchJobTitle(""); 
+  const clearSearchTitleInput = () => {
+    setSearchJobTitle(''); 
     setFilteredJobs(jobs); 
   };
 
-  const clearSearchLocation = () => {
-    setSearchLocation("");
+  const clearSearchLocationInput = () => {
+    setSearchLocation('');
     setFilteredJobs(jobs);
   };
  
@@ -98,9 +99,9 @@ const Index: React.FC = () => {
               onChange={(e) => setSearchJobTitle(e.target.value)}
             />
             {searchJobTitle && (
-              <IoClose
+              <IoCloseSharp
                 className="text-gray-500 text-2xl cursor-pointer"
-                onClick={clearSearchTitle}
+                onClick={clearSearchTitleInput}
               />
             )}
           </div>
@@ -119,9 +120,9 @@ const Index: React.FC = () => {
               onChange={(e) => setSearchLocation(e.target.value)}
             />
             {searchLocation && (
-              <IoClose
+              <IoCloseSharp
                 className="text-gray-500 text-2xl cursor-pointer"
-                onClick={clearSearchLocation}
+                onClick={clearSearchLocationInput}
               />
             )}
           </div>
