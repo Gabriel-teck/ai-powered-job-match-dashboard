@@ -89,7 +89,7 @@ export const JobList: React.FC<JobCardProps> = ({
     <>
       <div
         onClick={() => setIsModalOpen(!isModalOpen)}
-        className="border shadow-sm p-4 rounded  bg-white cursor-pointer space-y-2"
+        className=" shadow-md p-4 rounded  bg-white cursor-pointer space-y-2"
       >
         <div className="flex justify-between">
           <div className="flex">

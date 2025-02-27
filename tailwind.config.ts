@@ -8,10 +8,6 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        title: ["Montserrat", "serif"],
-        family: ["Roboto Serif", "serif"],
-      },
       screens: {
         xs:"430px", //custom screen
       }

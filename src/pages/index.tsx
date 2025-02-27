@@ -5,6 +5,7 @@ import { FaSearch } from "react-icons/fa";
 import { useFilter } from "@/components/FilterContext";
 import { useUser } from "@/components/UserContext";
 import { JobList } from "@/components/JobList";
+import { IoClose } from "react-icons/io5";
 
 interface Job {
   id: number;
@@ -64,18 +65,26 @@ const Index: React.FC = () => {
           job.location.toLowerCase().includes(searchLocation.toLowerCase())
       );
       setFilteredJobs(filtered);
-      setSearchJobTitle("");
-      setSearchLocation("");
       setSearchLoading(false); 
     }, 1000);
   };
 
+  const clearSearchTitle = () => {
+    setSearchJobTitle(""); 
+    setFilteredJobs(jobs); 
+  };
+
+  const clearSearchLocation = () => {
+    setSearchLocation("");
+    setFilteredJobs(jobs);
+  };
+ 
   return (
     <Layout>
       {/* Search Form */}
       <section className="sm:max-w-2xl md:max-w-4xl mx-auto mt-12">
         <form
-          className="border border-gray-400 rounded-lg overflow-hidden md:flex md:flex-row shadow-xl"
+          className=" rounded-lg overflow-hidden md:flex md:flex-row shadow-md"
           onSubmit={handleSearch}
         >
           {/* Job Search input */}
@@ -88,6 +97,12 @@ const Index: React.FC = () => {
               value={searchJobTitle}
               onChange={(e) => setSearchJobTitle(e.target.value)}
             />
+            {searchJobTitle && (
+              <IoClose
+                className="text-gray-500 text-2xl cursor-pointer"
+                onClick={clearSearchTitle}
+              />
+            )}
           </div>
 
           {/* Divider */}
@@ -103,6 +118,12 @@ const Index: React.FC = () => {
               value={searchLocation}
               onChange={(e) => setSearchLocation(e.target.value)}
             />
+            {searchLocation && (
+              <IoClose
+                className="text-gray-500 text-2xl cursor-pointer"
+                onClick={clearSearchLocation}
+              />
+            )}
           </div>
 
           {/* Desktop Search Button */}
@@ -131,13 +152,13 @@ const Index: React.FC = () => {
       </section>
 
       {/* Section Heading */}
-      <h2 className="mt-10 text-center pt-12 w-full text-black text-2xl border-b border-gray-200">
+      <h2 className="mt-8 text-center pt-12 w-full text-black text-2xl">
         Recommended Jobs
       </h2>
 
       {/* Job Listing Section */}
       <section>
-        <div className="container mx-auto grid grid-rows-4 md:grid-cols-2 gap-5 mt-8">
+        <div className="container mx-auto grid grid-rows-4 md:grid-cols-2 gap-5 mt-12">
           {loading ? (
             <div className="flex justify-center items-center col-span-2">
               <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
